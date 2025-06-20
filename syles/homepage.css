@@ -23,7 +23,7 @@ body{
     display: flex;
     flex-direction: column;
 }
-.input-session input{
+.input-session .input{
     max-width: 400px;
     height: 30px;
 }
@@ -43,22 +43,35 @@ body{
     justify-content: space-between;
 }
 .added-person button{
-    width: 150px;
+    max-width: 150px;
+    width:auto;
     height: 50px;
 }
 .person-delete{
     background-color: rgb(153, 40, 40);
 }
 .person-update{
-    background-color: rgb(63, 153, 40);
+    background-color: rgb(235, 235, 235);
 }
-.added-person-data{
+.data-disply, .data-edit, .added-person-data{
     display: flex;
     justify-content: space-between;
 }
-.added-person div{
-    width: 50%;
+
+.added-name{
+    width: 60%;
 }
 .added-weight{
+    width: 40%;
+    padding-left: 50px;
     padding-right: 50px;
+}
+.css-none{
+    display: none;
+}
+.added-person-data{
+    width: 60%;
+}
+.added-person-button{
+    width: 40%;
 }

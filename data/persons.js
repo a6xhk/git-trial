@@ -8,13 +8,12 @@ export function pushperson(id,name,weight){
 function savetostorage(){
     localStorage.setItem("persons",JSON.stringify(persons));
 }
-export function deleteperson(id){
-    let newlist=[];
-    persons.forEach(element => {
-        if(element.id!=id){
-            newlist.push(element);
-        }
-    });
-    persons=newlist;
+export function deleteperson(index){
+    persons.splice(index,1);
+    savetostorage();
+}
+export function updatedata(index,name,weight){
+    persons[index].name=name;
+    persons[index].weight=weight;
     savetostorage();
 }
