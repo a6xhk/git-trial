@@ -22,6 +22,7 @@ body{
 .input-session{
     display: flex;
     flex-direction: column;
+    gap: 2px;
 }
 .input-session .input{
     max-width: 400px;
@@ -40,11 +41,12 @@ body{
 .added-person{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 .added-person button{
     max-width: 150px;
-    width:auto;
+    min-width: 100px;
+    width:10vw;
     height: 50px;
 }
 .person-delete{
@@ -73,5 +75,6 @@ body{
     width: 60%;
 }
 .added-person-button{
-    width: 40%;
+    width: 30vw;
+    margin-left: auto;
 }

@@ -1,0 +1,47 @@
+body{
+    background-color: rgb(23, 31, 46);
+    color: white;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.css-edit-button{
+    
+    width: 150px;
+    height: 50px;
+}
+.available{
+    display: flex;
+    gap: 10px;
+}
+.created{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.person-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.person {
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(48, 78, 80);
+  width: 150px;
+  height: 100px; /* or any fixed height you want */
+  display: flex;
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center */
+  flex-direction: column;   /* stack children vertically */
+  cursor: pointer;
+}
+
+.css-none {
+  display: none;
+}
+
+.person-team-buttons button{
+  margin: 5px;
+}

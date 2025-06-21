@@ -17,3 +17,6 @@ export function updatedata(index,name,weight){
     persons[index].weight=weight;
     savetostorage();
 }
+export function availableremove(index){
+    persons.splice(index,1);
+}
