@@ -1,9 +1,10 @@
-import { pushtoteam1, team1list } from "../../data/team.js";
+import { pushtoteam2, team2list } from "../../data/team.js";
 
-export function renderteama() {
-    let teamahtml = '';
-    team1list.forEach((item) => {
-        teamahtml += `<div class="person">
+export function renderteamb() {
+    let teambhtml = '';
+    team2list.forEach((item) => {
+        console.log(item)
+        teambhtml += `<div class="person">
                         <div class="data">
                             <p>${item.name}</p>
                             <p>${item.weight}</p>
@@ -14,7 +15,8 @@ export function renderteama() {
                     </div>`
     })
 
-    document.querySelector('.person-lista').innerHTML=teamahtml;
-
+    document.querySelector('.person-listb').innerHTML=teambhtml;
 }
+
+
 

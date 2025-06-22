@@ -15,6 +15,7 @@ body{
 .available{
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 .created{
     display: grid;
@@ -26,11 +27,10 @@ body{
     gap: 10px;
 }
 .person {
-  padding: 10px;
+  width: 150px;
+  height: 100px;
   margin: 10px;
   background-color: rgb(48, 78, 80);
-  width: 150px;
-  height: 100px; /* or any fixed height you want */
   display: flex;
   justify-content: center;  /* horizontal center */
   align-items: center;      /* vertical center */

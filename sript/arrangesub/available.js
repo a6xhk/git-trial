@@ -1,4 +1,7 @@
 import { persons } from "../../data/persons.js";
+import { pushtoteam1, pushtoteam2 } from "../../data/team.js";
+import { renderteama } from '.././arrangesub/teama.js';
+import { renderteamb } from '.././arrangesub/teamb.js';
 export function renderavailable(){
     let htmlavailable='';
     persons.forEach((person,index)=> {
@@ -24,6 +27,18 @@ export function renderavailable(){
         singleperson.addEventListener("mouseleave",()=>{
             let index=singleperson.dataset.index;
             mouseleaving(singleperson,index);
+        })
+    })
+    document.querySelectorAll(`.teamA`).forEach((button) => {
+        button.addEventListener('click', () => {
+            pushtoteam1(Number(button.dataset.index));
+            renderteama();
+        })
+    })
+    document.querySelectorAll(`.teamB`).forEach((button) => {
+        button.addEventListener('click', () => {
+            pushtoteam2(Number(button.dataset.index));
+            renderteamb();
         })
     })
 }

@@ -11,6 +11,8 @@ export function pushtoteam1(index){
 export function pushtoteam2(index){
     team2list.push(persons[index]);
     availableremove(index);
+    renderavailable();
+    
 
 
 }
