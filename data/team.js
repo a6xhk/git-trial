@@ -1,5 +1,5 @@
 import { renderavailable } from "../sript/arrangesub/available.js";
-import { availableremove, persons } from "./persons.js";
+import { availableadd, availableremove, persons } from "./persons.js";
 export let team1list =[];
 export let team2list=[];
 
@@ -15,4 +15,12 @@ export function pushtoteam2(index){
     
 
 
+}
+export function removeteam1(index){
+    availableadd(team1list[index])
+    team1list.splice(index,1);
+}
+export function removeteam2(index){
+    availableadd(team2list[index])
+    team2list.splice(index,1);
 }

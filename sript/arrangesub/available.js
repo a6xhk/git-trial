@@ -19,13 +19,13 @@ export function renderavailable(){
     document.querySelector('.available').innerHTML=htmlavailable;
     document.querySelectorAll('.available .person').forEach((singleperson)=>{
         singleperson.addEventListener("mouseenter",()=>{
-            let index=singleperson.dataset.index;
+            let index=Number(singleperson.dataset.index);
             mouseentering(singleperson,index);
         })
     })
      document.querySelectorAll('.available .person').forEach((singleperson)=>{
         singleperson.addEventListener("mouseleave",()=>{
-            let index=singleperson.dataset.index;
+            let index=Number(singleperson.dataset.index);
             mouseleaving(singleperson,index);
         })
     })

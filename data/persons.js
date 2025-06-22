@@ -20,3 +20,6 @@ export function updatedata(index,name,weight){
 export function availableremove(index){
     persons.splice(index,1);
 }
+export function availableadd(person){
+    persons.push(person);
+}

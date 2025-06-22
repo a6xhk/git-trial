@@ -8,13 +8,14 @@ export function renderteama() {
                             <p>${item.name}</p>
                             <p>${item.weight}</p>
                         </div>
-                        <div class="delete css-none">
+                        <div class="deletea css-none">
                             <button>Delete</button>
                         </div>
                     </div>`
     })
 
     document.querySelector('.person-lista').innerHTML=teamahtml;
+    document.querySelector
 
 }
 
