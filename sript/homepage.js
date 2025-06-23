@@ -1,4 +1,5 @@
 import { persons, pushperson, deleteperson, updatedata } from "../data/persons.js";
+import { showmsg } from "./utils/calculatetotal.js";
 import { createid } from "./utils/createid.js";
 
 renderadded();
@@ -6,7 +7,15 @@ document.querySelector('.add-button').addEventListener("click", () => {
     addperson();
     renderadded();
 })
+document.querySelector('.input-weight').addEventListener("keydown",(event)=>{
+  if (event.key=='Enter'){
+    console.log('enter');
+    addperson();
+    renderadded();
+  }  
+})
 function addperson() {
+    showmsg();
     let name = document.querySelector('.input-name').value;
     let weight = document.querySelector('.input-weight').value;
     let id = createid();

@@ -38,3 +38,9 @@ function calculatediff(){
     let bw=bweight();
     return (Math.abs(aw-bw));
 }
+export function showmsg(){
+    document.querySelector('.addmsg').classList.remove('css-none');
+    setTimeout(() => {
+        document.querySelector('.addmsg').classList.add('css-none');
+    }, 2000);
+}

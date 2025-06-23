@@ -8,6 +8,13 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+.addmsg{
+    color: rgb(56, 85, 56);
+}
+.msgouter{
+    height: 30px;
+}
+.a
 .header p{
     font-size: 30px;
 }
