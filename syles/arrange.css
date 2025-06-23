@@ -39,6 +39,7 @@ body{
 }
 .person:hover{
   background-color: rgb(32, 51, 53);
+  scale: 1.05;
 }
 
 .css-none {
