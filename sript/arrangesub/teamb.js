@@ -1,9 +1,11 @@
 import { removeteam2, team2list } from "../../data/team.js";
+import { calculateteamb } from "../utils/calculatetotal.js";
 import { renderavailable } from "./available.js";
 
 export function renderteamb() {
     let teambhtml = '';
-    
+    calculateteamb();
+    calculate
     team2list.forEach((item,index) => {
         teambhtml += `<div class="person tb${index}" data-index="${index}">
                         <div class="dataB">

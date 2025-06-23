@@ -1,9 +1,10 @@
 import { removeteam1, team1list } from "../../data/team.js";
+import { calculateteama } from "../utils/calculatetotal.js";
 import { renderavailable } from "./available.js";
 
 export function renderteama() {
     let teamahtml = '';
-    
+    calculateteama();
     team1list.forEach((item,index) => {
         teamahtml += `<div class="person ta${index}" data-index="${index}">
                         <div class="dataA">

@@ -2,7 +2,9 @@ import { persons } from "../../data/persons.js";
 import { pushtoteam1, pushtoteam2 } from "../../data/team.js";
 import { renderteama } from '.././arrangesub/teama.js';
 import { renderteamb } from '.././arrangesub/teamb.js';
+import { calculateavailable } from "../utils/calculatetotal.js";
 export function renderavailable(){
+    calculateavailable();
     let htmlavailable='';
     persons.forEach((person,index)=> {
         htmlavailable+=`<div class="person a${index}" data-index="${index}">
