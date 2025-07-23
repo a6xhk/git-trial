@@ -9,15 +9,17 @@ document.querySelector('.add-button').addEventListener("click", () => {
 })
 document.querySelector('.input-weight').addEventListener("keydown",(event)=>{
   if (event.key=='Enter'){
-    console.log('enter');
     addperson();
     renderadded();
   }  
 })
 function addperson() {
     showmsg();
+
     let name = document.querySelector('.input-name').value;
+    document.querySelector('.input-name').value="";
     let weight = document.querySelector('.input-weight').value;
+    document.querySelector('.input-weight').value=""
     let id = createid();
     pushperson(id, name, weight);
 }
@@ -31,16 +33,20 @@ function renderadded() {
                         <div class="data-disply data-disply${index}">
                             <p class="added-name">${person.name}</p>
                             <p class="added-weight">${person.weight}</p>
+                            
                         </div>
                         <div class="data-edit data-edit${index} css-none">
                             <input type="text" name="name" class="edit edit-name${index}">
                             
                             <input type="number" name="weight" class="edit edit-weight${index}">
+                            
                         </div>
                     </div>
                     <div class="added-person-button">
                         <button class="person-delete" data-id="${person.id}" data-index="${index}">Delete</button>
-                        <button class="person-update" data-id="${person.id}" data-index="${index}">Update</button>
+                        <button class="person-update update${person.id}" data-id="${person.id}" data-index="${index}">Update</button>
+                        <button class="confirm con${index} css-none" data-id="${person.id}" data-index="${index}">Update</button>
+                        
                     </div>    
                 </div>`
     })
@@ -65,17 +71,16 @@ function toupdate(upbutt) {
     index = Number(index);
     document.querySelector(`.data-edit${index}`).classList.remove("css-none");
     document.querySelector(`.data-disply${index}`).classList.add("css-none");
-    document.querySelector(`.edit-name${index}`).placeholder = (persons[index].name);
-    document.querySelector(`.edit-weight${index}`).placeholder = (persons[index].weight);
-    document.querySelectorAll('.person-update').forEach((upbutt) => {
-        upbutt.addEventListener("click", () => {
-            confirm(index);
-
-        })
-    });
+    upbutt.classList.add("css-none");
+    document.querySelector(`.con${index}`).classList.remove("css-none")
+    document.querySelector(`.edit-name${index}`).value = (persons[index].name);
+    document.querySelector(`.edit-weight${index}`).value = (persons[index].weight);
+    document.querySelector('.confirm').addEventListener("click",()=>{
+        confirm(index)
+    })
 }
 function confirm(index){
-    let name=document.querySelector(`.edit-name${index}`).value;
+    let name=document.querySelector(`.edit-name${index}`).value
     let weight=document.querySelector(`.edit-weight${index}`).value;
     updatedata(index,name,weight);
     document.querySelector(`.data-edit${index}`).classList.add("css-none");
