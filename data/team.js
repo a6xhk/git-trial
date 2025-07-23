@@ -24,3 +24,11 @@ export function removeteam2(index){
     availableadd(team2list[index])
     team2list.splice(index,1);
 }
+export function movetob(index){
+    team2list.push(team1list[index]);
+    team1list.splice(index,1)
+}
+export function movetoa(index){
+    team1list.push(team2list[index]);
+    team2list.splice(index,1)
+}

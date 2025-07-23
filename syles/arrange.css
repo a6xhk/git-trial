@@ -41,6 +41,12 @@ body{
   background-color: rgb(32, 51, 53);
   scale: 1.05;
 }
+.css-button-row{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
 
 .css-none {
   display: none;

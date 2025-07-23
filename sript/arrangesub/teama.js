@@ -1,6 +1,7 @@
-import { removeteam1, team1list } from "../../data/team.js";
+import { movetob, removeteam1, team1list } from "../../data/team.js";
 import { calculateteama } from "../utils/calculatetotal.js";
 import { renderavailable } from "./available.js";
+import { renderteamb } from "./teamb.js";
 
 export function renderteama() {
     let teamahtml = '';
@@ -11,8 +12,9 @@ export function renderteama() {
                             <p>${item.name}</p>
                             <p>${item.weight}</p>
                         </div>
-                        <div class="dela css-none" data-index="${index}">
+                        <div class="dela css-none css-button-row" data-index="${index}">
                             <button data-index="${index}" class="deletea">Delete</button>
+                            <button data-index="${index}" class="deletetob">Move to B</button>
                         </div>
                     </div>`
     })
@@ -25,6 +27,14 @@ export function renderteama() {
             removeteam1(Number(index));
             renderteama();
             renderavailable();
+        })
+    })
+    document.querySelectorAll(`.deletetob`).forEach((button)=>{
+        button.addEventListener("click",()=>{
+            let index=button.dataset.index
+            movetob(Number(index));
+            renderteamb();
+            renderteama();
         })
     })
 
