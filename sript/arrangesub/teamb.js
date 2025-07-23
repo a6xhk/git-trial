@@ -40,26 +40,25 @@ export function renderteamb() {
 
     document.querySelectorAll('.person-listb .person').forEach((singleperson)=>{
         singleperson.addEventListener("mouseenter",()=>{
+            setTimeout(()=>{
+
+                let index=Number(singleperson.dataset.index);
+                mouseentering(singleperson,index);
+            },200)
+            
+        })
+    }) 
+    document.querySelectorAll('.person-listb .person').forEach((singleperson)=>{
+        singleperson.addEventListener("mouseleave",()=>{
             let index=Number(singleperson.dataset.index);
             mouseentering(singleperson,index);
         })
     })
-     document.querySelectorAll('.person-listb .person').forEach((singleperson)=>{
-        singleperson.addEventListener("mouseleave",()=>{
-            let index=Number(singleperson.dataset.index);
-            mouseleaving(singleperson,index);
-        })
-    })
-
 }function mouseentering(person,index){
     
-    document.querySelector(`.tb${index} .dataB`).classList.add("css-none");
-    document.querySelector(`.tb${index} .delb`).classList.remove("css-none");
+    document.querySelector(`.tb${index} .dataB`).classList.toggle("css-none");
+    document.querySelector(`.tb${index} .delb`).classList.toggle("css-none");
     
-}
-function mouseleaving(person,index){
-    document.querySelector(`.tb${index} .dataB`).classList.remove("css-none");
-    document.querySelector(`.tb${index} .delb`).classList.add("css-none");
 }
 
 

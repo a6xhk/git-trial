@@ -40,26 +40,25 @@ export function renderteama() {
 
     document.querySelectorAll('.person-lista .person').forEach((singleperson)=>{
         singleperson.addEventListener("mouseenter",()=>{
+            setTimeout(()=>{
             let index=Number(singleperson.dataset.index);
-            mouseentering(singleperson,index);
+            mouseentering(singleperson,index);    
+            },200)
+            
         })
     })
      document.querySelectorAll('.person-lista .person').forEach((singleperson)=>{
         singleperson.addEventListener("mouseleave",()=>{
             let index=Number(singleperson.dataset.index);
-            mouseleaving(singleperson,index);
+            mouseentering(singleperson,index);
         })
     })
 
 }function mouseentering(person,index){
     
-    document.querySelector(`.ta${index} .dataA`).classList.add("css-none");
-    document.querySelector(`.ta${index} .dela`).classList.remove("css-none");
+    document.querySelector(`.ta${index} .dataA`).classList.toggle("css-none");
+    document.querySelector(`.ta${index} .dela`).classList.toggle("css-none");
     
-}
-function mouseleaving(person,index){
-    document.querySelector(`.ta${index} .dataA`).classList.remove("css-none");
-    document.querySelector(`.ta${index} .dela`).classList.add("css-none");
 }
 
 

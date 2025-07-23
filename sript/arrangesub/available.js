@@ -21,14 +21,16 @@ export function renderavailable(){
     document.querySelector('.available').innerHTML=htmlavailable;
     document.querySelectorAll('.available .person').forEach((singleperson)=>{
         singleperson.addEventListener("mouseenter",()=>{
-            let index=Number(singleperson.dataset.index);
+            setTimeout(()=>{
+                let index=Number(singleperson.dataset.index);
             mouseentering(singleperson,index);
+            },200)
         })
     })
      document.querySelectorAll('.available .person').forEach((singleperson)=>{
         singleperson.addEventListener("mouseleave",()=>{
             let index=Number(singleperson.dataset.index);
-            mouseleaving(singleperson,index);
+            mouseentering(singleperson,index);
         })
     })
     document.querySelectorAll(`.teamA`).forEach((button) => {
@@ -46,11 +48,7 @@ export function renderavailable(){
 }
 
 function mouseentering(person,index){
-    document.querySelector(`.a${index} .data-value`).classList.add("css-none");
-    document.querySelector(`.a${index} .person-team-buttons`).classList.remove("css-none");
+    document.querySelector(`.a${index} .data-value`).classList.toggle("css-none");
+    document.querySelector(`.a${index} .person-team-buttons`).classList.toggle("css-none");
     
-}
-function mouseleaving(person,index){
-    document.querySelector(`.a${index} .data-value`).classList.remove("css-none");
-    document.querySelector(`.a${index} .person-team-buttons`).classList.add("css-none");
 }
