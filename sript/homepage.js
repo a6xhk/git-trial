@@ -44,7 +44,7 @@ function renderadded() {
                     </div>
                     <div class="added-person-button">
                         <button class="person-delete" data-id="${person.id}" data-index="${index}">Delete</button>
-                        <button class="person-update update${person.id}" data-id="${person.id}" data-index="${index}">Update</button>
+                        <button class="person-update update${index}" data-id="${person.id}" data-index="${index}">Update</button>
                         <button class="confirm con${index} css-none" data-id="${person.id}" data-index="${index}">Update</button>
                         
                     </div>    
@@ -75,16 +75,19 @@ function toupdate(upbutt) {
     document.querySelector(`.con${index}`).classList.remove("css-none")
     document.querySelector(`.edit-name${index}`).value = (persons[index].name);
     document.querySelector(`.edit-weight${index}`).value = (persons[index].weight);
-    document.querySelector('.confirm').addEventListener("click",()=>{
+    document.querySelector(`.con${index}`).addEventListener("click",()=>{
         confirm(index)
     })
 }
 function confirm(index){
+    console.log(index)
     let name=document.querySelector(`.edit-name${index}`).value
     let weight=document.querySelector(`.edit-weight${index}`).value;
     updatedata(index,name,weight);
     document.querySelector(`.data-edit${index}`).classList.add("css-none");
     document.querySelector(`.data-disply${index}`).classList.remove("css-none");
+    document.querySelector(`.con${index}`).classList.add("css-none")
+    document.querySelector(`.update${index}`).classList.remove("css-none")
 
     renderadded();
 }
