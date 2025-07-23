@@ -48,10 +48,17 @@ body{
 
 }
 
+
 .css-none {
   display: none;
 }
 
 .person-team-buttons button{
   margin: 5px;
+}
+.person-lista .person{
+  background-color: rgba(74, 80, 48, 0.808);
+}
+.person-listb .person{
+  background-color: rgba(80, 48, 48, 0.329);
 }
