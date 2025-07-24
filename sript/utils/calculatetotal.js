@@ -12,28 +12,28 @@ export function calculateteamb(){
     document.querySelector(".teambtext").innerHTML=`Team b (${team2list.length})-${bweight()}`;
     document.querySelector(".diffrence").innerHTML=`diffrence=${calculatediff()}`;
 }
-function availableweight(){
+export function availableweight(){
     let availablew=0;
     persons.forEach(element => {
         availablew+=Number(element.weight);
     });
     return availablew;
 }
-function aweight(){
+export function aweight(){
     let aw=0;
     team1list.forEach(element => {
         aw+=Number(element.weight);
     });
     return aw;
 }
-function bweight(){
+export function bweight(){
     let bw=0;
     team2list.forEach(element => {
         bw+=Number(element.weight);
     });
     return bw;
 }
-function calculatediff(){
+export function calculatediff(){
     let aw=aweight();
     let bw=bweight();
     return (Math.abs(aw-bw));
