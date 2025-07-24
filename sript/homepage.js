@@ -1,8 +1,14 @@
-import { persons, pushperson, deleteperson, updatedata } from "../data/persons.js";
+import { persons, pushperson, deleteperson, updatedata} from "../data/persons.js";
+import { selected } from "../data/selected.js";
+import { tounselect, updateselected } from "./homeselectpeople.js";
 import { showmsg } from "./utils/calculatetotal.js";
 import { createid } from "./utils/createid.js";
-
 renderadded();
+document.querySelector(".Submittoarrange").addEventListener("click",()=>{
+    console.log("fulldata")
+    localStorage.setItem("fulldata",JSON.stringify(persons))
+    localStorage.setItem("persons",JSON.stringify(selected))
+})
 document.querySelector('.add-button').addEventListener("click", () => {
     addperson();
     renderadded();
@@ -25,11 +31,12 @@ function addperson() {
 }
 
 
-function renderadded() {
+export function renderadded() {
+    console.log(selected)
     let htmladded = '';
     persons.forEach((person, index) => {
-        htmladded += `<div class="added-person">
-                    <div class="added-person-data">
+        htmladded += `<div class="added-person added${index} added${person.id}">
+                    <div class="added-person-data" data-index="${index}">
                         <div class="data-disply data-disply${index}">
                             <p class="added-name">${person.name}</p>
                             <p class="added-weight">${person.weight}</p>
@@ -65,6 +72,9 @@ function renderadded() {
 
         })
     });
+    
+    updateselected();
+    tounselect();
 }
 function toupdate(upbutt) {
     let index = upbutt.dataset.index;
@@ -80,7 +90,6 @@ function toupdate(upbutt) {
     })
 }
 function confirm(index){
-    console.log(index)
     let name=document.querySelector(`.edit-name${index}`).value
     let weight=document.querySelector(`.edit-weight${index}`).value;
     updatedata(index,name,weight);

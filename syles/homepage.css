@@ -49,6 +49,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    background-color:rgb(17, 19, 46) ;
 }
 .added-person button{
     max-width: 150px;
@@ -86,4 +87,7 @@ body{
 }
 .added-person-button{
     max-width: 40%;
+}
+.selected{
+    background-color: rgb(11, 11, 53);
 }
