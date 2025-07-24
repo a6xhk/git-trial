@@ -6,11 +6,12 @@ export function calculateavailable(){
 }
 export function calculateteama(){
     document.querySelector(".teamatext").innerHTML=`Team A (${team1list.length})-${aweight()}`;
-    document.querySelector(".diffrence").innerHTML=`diffrence=${calculatediff()}`;
+    document.querySelector(".diffrence").innerHTML=`<p>${calculatediff()}</p>Difference`;
 }
 export function calculateteamb(){
     document.querySelector(".teambtext").innerHTML=`Team b (${team2list.length})-${bweight()}`;
-    document.querySelector(".diffrence").innerHTML=`diffrence=${calculatediff()}`;
+    document.querySelector(".diffrence").innerHTML=`<p>${calculatediff()}</p>Difference`;
+
 }
 export function availableweight(){
     let availablew=0;

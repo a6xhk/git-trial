@@ -62,3 +62,24 @@ body{
 .person-listb .person{
   background-color: rgba(80, 48, 48, 0.329);
 }
+.diffsort{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sortrest{
+  width: 50vh;
+  background-color: rgb(8, 54, 39);
+  color: white;
+  padding: 5px;
+}
+.diffrence{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:;
+}
+
+.diffrence p{
+  font-size: large;
+}
