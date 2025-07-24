@@ -68,7 +68,7 @@ body{
   align-items: center;
 }
 .sortrest{
-  width: 50vh;
+  min-width: 50vh;
   background-color: rgb(8, 54, 39);
   color: white;
   padding: 5px;
