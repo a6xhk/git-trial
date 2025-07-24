@@ -1,93 +1,116 @@
-body{
+body {
     background-color: rgb(23, 31, 46);
     color: white;
 }
-.header{
+
+.header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-.addmsg{
+
+.addmsg {
     color: rgb(56, 85, 56);
 }
-.msgouter{
+
+.msgouter {
     height: 30px;
 }
-.a
-.header p{
+
+.a .header p {
     font-size: 30px;
 }
-.header button{
+
+.header button {
     width: 150px;
     height: 50px;
 }
-.header button a{
+
+.header button a {
     text-decoration: none;
     color: black;
 }
-.input-session{
+
+.input-session {
     display: flex;
     flex-direction: column;
     gap: 2px;
 }
-.input-session .input{
+
+.input-session .input {
     max-width: 400px;
     height: 30px;
 }
-.input-session button{
+
+.input-session button {
     max-width: 400px;
     height: 30px;
     background-color: rgb(59, 156, 76);
 }
-.added{
+
+.added {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.added-person{
+
+.added-person {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    background-color:rgb(17, 19, 46) ;
+    background-color: rgb(17, 19, 46);
 }
-.added-person button{
+
+.added-person button {
     max-width: 150px;
     min-width: 60px;
-    width:10vw;
+    width: 10vw;
     height: 50px;
 }
-.data-edit input{
+
+.data-edit input {
     width: 50%;
 }
-.person-delete{
+
+.person-delete {
     background-color: rgb(153, 40, 40);
 }
-.person-update{
+
+.person-update {
     background-color: rgb(235, 235, 235);
 }
-.data-disply, .data-edit, .added-person-data{
+
+.data-disply,
+.data-edit,
+.added-person-data {
     display: flex;
     justify-content: space-between;
 }
-.added-name{
+
+.added-name {
     width: 60%;
 }
-.added-weight{
+
+.added-weight {
     width: 40%;
     padding-left: 50px;
     padding-right: 50px;
 }
-.css-none{
+
+.css-none {
     display: none;
 }
-.added-person-data{
+
+.added-person-data {
     width: 65%;
- min-height: 40px;
+    min-height: 40px;
 }
-.added-person-button{
+
+.added-person-button {
     max-width: 40%;
 }
-.selected{
+
+.selected {
     background-color: rgb(11, 11, 53);
 }

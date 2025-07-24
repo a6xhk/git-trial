@@ -1,31 +1,31 @@
-import { persons, pushperson, deleteperson, updatedata} from "../data/persons.js";
+import { persons, pushperson, deleteperson, updatedata } from "../data/persons.js";
 import { selected } from "../data/selected.js";
 import { tounselect, updateselected } from "./homeselectpeople.js";
 import { showmsg } from "./utils/calculatetotal.js";
 import { createid } from "./utils/createid.js";
 renderadded();
-document.querySelector(".Submittoarrange").addEventListener("click",()=>{
+document.querySelector(".Submittoarrange").addEventListener("click", () => {
     console.log("fulldata")
-    localStorage.setItem("fulldata",JSON.stringify(persons))
-    localStorage.setItem("persons",JSON.stringify(selected))
+    localStorage.setItem("fulldata", JSON.stringify(persons))
+    localStorage.setItem("persons", JSON.stringify(selected))
 })
 document.querySelector('.add-button').addEventListener("click", () => {
     addperson();
     renderadded();
 })
-document.querySelector('.input-weight').addEventListener("keydown",(event)=>{
-  if (event.key=='Enter'){
-    addperson();
-    renderadded();
-  }  
+document.querySelector('.input-weight').addEventListener("keydown", (event) => {
+    if (event.key == 'Enter') {
+        addperson();
+        renderadded();
+    }
 })
 function addperson() {
     showmsg();
 
     let name = document.querySelector('.input-name').value;
-    document.querySelector('.input-name').value="";
+    document.querySelector('.input-name').value = "";
     let weight = document.querySelector('.input-weight').value;
-    document.querySelector('.input-weight').value=""
+    document.querySelector('.input-weight').value = ""
     let id = createid();
     pushperson(id, name, weight);
 }
@@ -72,7 +72,7 @@ export function renderadded() {
 
         })
     });
-    
+
     updateselected();
     tounselect();
 }
@@ -85,14 +85,14 @@ function toupdate(upbutt) {
     document.querySelector(`.con${index}`).classList.remove("css-none")
     document.querySelector(`.edit-name${index}`).value = (persons[index].name);
     document.querySelector(`.edit-weight${index}`).value = (persons[index].weight);
-    document.querySelector(`.con${index}`).addEventListener("click",()=>{
+    document.querySelector(`.con${index}`).addEventListener("click", () => {
         confirm(index)
     })
 }
-function confirm(index){
-    let name=document.querySelector(`.edit-name${index}`).value
-    let weight=document.querySelector(`.edit-weight${index}`).value;
-    updatedata(index,name,weight);
+function confirm(index) {
+    let name = document.querySelector(`.edit-name${index}`).value
+    let weight = document.querySelector(`.edit-weight${index}`).value;
+    updatedata(index, name, weight);
     document.querySelector(`.data-edit${index}`).classList.add("css-none");
     document.querySelector(`.data-disply${index}`).classList.remove("css-none");
     document.querySelector(`.con${index}`).classList.add("css-none")

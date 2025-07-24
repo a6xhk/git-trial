@@ -6,7 +6,7 @@ import { renderteama } from "./teama.js";
 export function renderteamb() {
     let teambhtml = '';
     calculateteamb();
-    team2list.forEach((item,index) => {
+    team2list.forEach((item, index) => {
         teambhtml += `<div class="person tb${index}" data-index="${index}">
                         <div class="dataB">
                             <p>${item.name}</p>
@@ -29,36 +29,36 @@ export function renderteamb() {
             renderavailable();
         })
     })
-    document.querySelectorAll(`.deletetoA`).forEach((button)=>{
-        button.addEventListener("click",()=>{
-            let index=button.dataset.index
+    document.querySelectorAll(`.deletetoA`).forEach((button) => {
+        button.addEventListener("click", () => {
+            let index = button.dataset.index
             movetoa(Number(index));
             renderteama();
             renderteamb();
         })
     })
 
-    document.querySelectorAll('.person-listb .person').forEach((singleperson)=>{
-        singleperson.addEventListener("mouseenter",()=>{
-            setTimeout(()=>{
+    document.querySelectorAll('.person-listb .person').forEach((singleperson) => {
+        singleperson.addEventListener("mouseenter", () => {
+            setTimeout(() => {
 
-                let index=Number(singleperson.dataset.index);
-                mouseentering(singleperson,index);
-            },200)
-            
-        })
-    }) 
-    document.querySelectorAll('.person-listb .person').forEach((singleperson)=>{
-        singleperson.addEventListener("mouseleave",()=>{
-            let index=Number(singleperson.dataset.index);
-            mouseentering(singleperson,index);
+                let index = Number(singleperson.dataset.index);
+                mouseentering(singleperson, index);
+            }, 200)
+
         })
     })
-}function mouseentering(person,index){
-    
+    document.querySelectorAll('.person-listb .person').forEach((singleperson) => {
+        singleperson.addEventListener("mouseleave", () => {
+            let index = Number(singleperson.dataset.index);
+            mouseentering(singleperson, index);
+        })
+    })
+} function mouseentering(person, index) {
+
     document.querySelector(`.tb${index} .dataB`).classList.toggle("css-none");
     document.querySelector(`.tb${index} .delb`).classList.toggle("css-none");
-    
+
 }
 
 

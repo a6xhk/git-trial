@@ -3,11 +3,11 @@ import { pushtoteam1, pushtoteam2 } from "../../data/team.js";
 import { renderteama } from '.././arrangesub/teama.js';
 import { renderteamb } from '.././arrangesub/teamb.js';
 import { calculateavailable } from "../utils/calculatetotal.js";
-export function renderavailable(){
+export function renderavailable() {
     calculateavailable();
-    let htmlavailable='';
-    persons.forEach((person,index)=> {
-        htmlavailable+=`<div class="person a${index}" data-index="${index}">
+    let htmlavailable = '';
+    persons.forEach((person, index) => {
+        htmlavailable += `<div class="person a${index}" data-index="${index}">
                 <div class="data-value">
                     <p>${person.name}</p>
                     <p>${person.weight}</p>
@@ -18,19 +18,19 @@ export function renderavailable(){
                 </div>
             </div>`
     });
-    document.querySelector('.available').innerHTML=htmlavailable;
-    document.querySelectorAll('.available .person').forEach((singleperson)=>{
-        singleperson.addEventListener("mouseenter",()=>{
-            setTimeout(()=>{
-                let index=Number(singleperson.dataset.index);
-            mouseentering(singleperson,index);
-            },200)
+    document.querySelector('.available').innerHTML = htmlavailable;
+    document.querySelectorAll('.available .person').forEach((singleperson) => {
+        singleperson.addEventListener("mouseenter", () => {
+            setTimeout(() => {
+                let index = Number(singleperson.dataset.index);
+                mouseentering(singleperson, index);
+            }, 200)
         })
     })
-     document.querySelectorAll('.available .person').forEach((singleperson)=>{
-        singleperson.addEventListener("mouseleave",()=>{
-            let index=Number(singleperson.dataset.index);
-            mouseentering(singleperson,index);
+    document.querySelectorAll('.available .person').forEach((singleperson) => {
+        singleperson.addEventListener("mouseleave", () => {
+            let index = Number(singleperson.dataset.index);
+            mouseentering(singleperson, index);
         })
     })
     document.querySelectorAll(`.teamA`).forEach((button) => {
@@ -47,8 +47,8 @@ export function renderavailable(){
     })
 }
 
-function mouseentering(person,index){
+function mouseentering(person, index) {
     document.querySelector(`.a${index} .data-value`).classList.toggle("css-none");
     document.querySelector(`.a${index} .person-team-buttons`).classList.toggle("css-none");
-    
+
 }

@@ -6,7 +6,7 @@ import { renderteamb } from "./teamb.js";
 export function renderteama() {
     let teamahtml = '';
     calculateteama();
-    team1list.forEach((item,index) => {
+    team1list.forEach((item, index) => {
         teamahtml += `<div class="person ta${index}" data-index="${index}">
                         <div class="dataA">
                             <p>${item.name}</p>
@@ -29,36 +29,36 @@ export function renderteama() {
             renderavailable();
         })
     })
-    document.querySelectorAll(`.deletetob`).forEach((button)=>{
-        button.addEventListener("click",()=>{
-            let index=button.dataset.index
+    document.querySelectorAll(`.deletetob`).forEach((button) => {
+        button.addEventListener("click", () => {
+            let index = button.dataset.index
             movetob(Number(index));
             renderteamb();
             renderteama();
         })
     })
 
-    document.querySelectorAll('.person-lista .person').forEach((singleperson)=>{
-        singleperson.addEventListener("mouseenter",()=>{
-            setTimeout(()=>{
-            let index=Number(singleperson.dataset.index);
-            mouseentering(singleperson,index);    
-            },200)
-            
+    document.querySelectorAll('.person-lista .person').forEach((singleperson) => {
+        singleperson.addEventListener("mouseenter", () => {
+            setTimeout(() => {
+                let index = Number(singleperson.dataset.index);
+                mouseentering(singleperson, index);
+            }, 200)
+
         })
     })
-     document.querySelectorAll('.person-lista .person').forEach((singleperson)=>{
-        singleperson.addEventListener("mouseleave",()=>{
-            let index=Number(singleperson.dataset.index);
-            mouseentering(singleperson,index);
+    document.querySelectorAll('.person-lista .person').forEach((singleperson) => {
+        singleperson.addEventListener("mouseleave", () => {
+            let index = Number(singleperson.dataset.index);
+            mouseentering(singleperson, index);
         })
     })
 
-}function mouseentering(person,index){
-    
+} function mouseentering(person, index) {
+
     document.querySelector(`.ta${index} .dataA`).classList.toggle("css-none");
     document.querySelector(`.ta${index} .dela`).classList.toggle("css-none");
-    
+
 }
 
 

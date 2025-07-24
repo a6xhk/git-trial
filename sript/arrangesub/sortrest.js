@@ -1,43 +1,43 @@
 import { persons } from "../../data/persons.js";
 
-export function sortbal(a,b) {
+export function sortbal(a, b) {
     let duplicate = [...persons]
     let weights = []
     duplicate.sort((a, b) => a.weight - b.weight)
     duplicate.forEach(element => {
         weights.push(element.weight);
     });
-    let result = closestsub(weights,a,b);
+    let result = closestsub(weights, a, b);
     console.log(result)
     return result
 
 
 }
 
-function closestsub(weights,a,b) {
+function closestsub(weights, a, b) {
     let lengthofw = weights.length
     let result = []
     let last = Math.floor(lengthofw / 2)
     result[last] = Infinity
-    let exclude=null
+    let exclude = null
     if (lengthofw % 2) {
         weights.forEach((weight, index) => {
             let duplicateweight = [...weights]
             duplicateweight.splice(index, 1)
-            let temp = twosumeven(duplicateweight,a,b)
+            let temp = twosumeven(duplicateweight, a, b)
             if (result[last] > temp[last]) {
-                exclude=weight
+                exclude = weight
                 result = temp
             }
         })
     }
     else {
-        result = twosumeven(weights,a,b)
+        result = twosumeven(weights, a, b)
     }
-    return [result,exclude]
+    return [result, exclude]
 
 }
-function twosumeven(weights,a,b) {
+function twosumeven(weights, a, b) {
     let length = weights.length
     length /= 2
     if (length > 7) {
@@ -47,10 +47,10 @@ function twosumeven(weights,a,b) {
     weights.forEach(element => {
         totalweight += Number(element)
     })
-    totalweight=totalweight+a+b
+    totalweight = totalweight + a + b
     console.log(totalweight)
     totalweight /= 2
-    return kclose(length, weights, totalweight-a)
+    return kclose(length, weights, totalweight - a)
 }
 function twopointer(weights, target) {
     let result = [];

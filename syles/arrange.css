@@ -1,47 +1,58 @@
-body{
-    background-color: rgb(23, 31, 46);
-    color: white;
+body {
+  background-color: rgb(23, 31, 46);
+  color: white;
 }
-.header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.css-edit-button{
-    
-    width: 150px;
-    height: 50px;
+
+.css-edit-button {
+
+  width: 150px;
+  height: 50px;
 }
-.available{
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+
+.available {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
-.created{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+
+.created {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
-.person-list{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+
+.person-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
 .person {
   width: 150px;
   height: 100px;
   margin: 10px;
   background-color: rgb(48, 78, 80);
   display: flex;
-  justify-content: center;  /* horizontal center */
-  align-items: center;      /* vertical center */
-  flex-direction: column;   /* stack children vertically */
+  justify-content: center;
+  /* horizontal center */
+  align-items: center;
+  /* vertical center */
+  flex-direction: column;
+  /* stack children vertically */
   cursor: pointer;
 }
-.person:hover{
+
+.person:hover {
   background-color: rgb(32, 51, 53);
   scale: 1.05;
 }
-.css-button-row{
+
+.css-button-row {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -53,33 +64,38 @@ body{
   display: none;
 }
 
-.person-team-buttons button{
+.person-team-buttons button {
   margin: 5px;
 }
-.person-lista .person{
+
+.person-lista .person {
   background-color: rgba(74, 80, 48, 0.808);
 }
-.person-listb .person{
+
+.person-listb .person {
   background-color: rgba(80, 48, 48, 0.329);
 }
-.diffsort{
+
+.diffsort {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.sortrest{
+
+.sortrest {
   min-width: 50vh;
   background-color: rgb(8, 54, 39);
   color: white;
   padding: 5px;
 }
-.diffrence{
+
+.diffrence {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap:;
+  gap: ;
 }
 
-.diffrence p{
+.diffrence p {
   font-size: large;
 }

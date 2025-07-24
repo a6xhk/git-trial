@@ -4,7 +4,7 @@ import { renderadded } from "./homepage.js";
 
 export function updateselected() {
     persons.forEach((person) => {
-        selected.forEach((select,index) => {
+        selected.forEach((select, index) => {
             if (person.id === select.id) {
                 document.querySelector(`.added${select.id}`).classList.toggle("selected");
             }
