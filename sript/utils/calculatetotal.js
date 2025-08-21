@@ -1,4 +1,5 @@
 import { persons } from "../../data/persons.js";
+import { selected } from "../../data/selected.js";
 import { team1list, team2list } from "../../data/team.js";
 
 export function calculateavailable() {
@@ -44,4 +45,7 @@ export function showmsg() {
     setTimeout(() => {
         document.querySelector('.addmsg').classList.add('css-none');
     }, 2000);
+}
+export function showtotal() {
+    document.querySelector(".findtotal").innerHTML = `total selected:${selected.length}`
 }

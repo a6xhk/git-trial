@@ -17,7 +17,6 @@ export function updateselected() {
 
 
 export function tounselect(index) {
-        console.log('clicked sqr')
         let temp
         persons.forEach((Element) => {
             if (Element.id === persons[index].id)

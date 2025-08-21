@@ -110,8 +110,8 @@ body {
     max-width: 40%;
 }
 .sqr{
-    border-radius: 50%;
-    width: 50px;
+    min-width: 25px;
+    width: 10%;
     background-color: white;
     
 }

@@ -1,7 +1,7 @@
 import { persons, pushperson, updatedata } from "../data/persons.js";
 import { selected, deleteperson } from "../data/selected.js";
 import { tounselect, updateselected } from "./homeselectpeople.js";
-import { showmsg } from "./utils/calculatetotal.js";
+import { showmsg, showtotal } from "./utils/calculatetotal.js";
 import { createid } from "./utils/createid.js";
 renderadded();
 document.querySelector(".Submittoarrange").addEventListener("click", () => {
@@ -32,7 +32,7 @@ function addperson() {
 
 
 export function renderadded() {
-    console.log(selected)
+    showtotal();
     let htmladded = '';
     persons.forEach((person, index) => {
         htmladded += `
