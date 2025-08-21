@@ -1,5 +1,5 @@
-import { persons, pushperson, deleteperson, updatedata } from "../data/persons.js";
-import { selected } from "../data/selected.js";
+import { persons, pushperson, updatedata } from "../data/persons.js";
+import { selected, deleteperson } from "../data/selected.js";
 import { tounselect, updateselected } from "./homeselectpeople.js";
 import { showmsg } from "./utils/calculatetotal.js";
 import { createid } from "./utils/createid.js";

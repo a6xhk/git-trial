@@ -1,6 +1,21 @@
-import { persons } from "./persons.js";
+import { deleteperson_inperson, persons } from "./persons.js";
 export let selected = JSON.parse(localStorage.getItem("selected")) || [...persons];
+export function delselected(ind){
+    console.log(ind)
+    selected.forEach((Element, index) => {
+        console.log(Element.id)
+        if (Element.id === persons[ind].id) {
+            selected.splice(index, 1)
+            console.log(selected)
+            saveselection();
+        }
+    })
+    deleteperson_inperson(ind)
 
+}
+export function deleteperson(id){
+    delselected(id)
+}
 export function removefromselected(id) {
     let win = Boolean()
     selected.forEach((Element, index) => {

@@ -8,9 +8,10 @@ export function pushperson(id, name, weight) {
 function savetostorage() {
     localStorage.setItem("persons", JSON.stringify(persons));
 }
-export function deleteperson(index) {
+export function deleteperson_inperson(index) {
     persons.splice(index, 1);
     savetostorage();
+    
 }
 export function updatedata(index, name, weight) {
     persons[index].name = name;
