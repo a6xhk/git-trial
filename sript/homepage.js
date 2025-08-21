@@ -35,29 +35,63 @@ export function renderadded() {
     console.log(selected)
     let htmladded = '';
     persons.forEach((person, index) => {
-        htmladded += `<div class="added-person added${index} added${person.id}">
-                    <div class="added-person-data" data-index="${index}">
-                        <div class="data-disply data-disply${index}">
-                            <p class="added-name">${person.name}</p>
-                            <p class="added-weight">${person.weight}</p>
-                            
-                        </div>
-                        <div class="data-edit data-edit${index} css-none">
-                            <input type="text" name="name" class="edit edit-name${index}">
-                            
-                            <input type="number" name="weight" class="edit edit-weight${index}">
-                            
-                        </div>
-                    </div>
-                    <div class="added-person-button">
-                        <button class="person-delete" data-id="${person.id}" data-index="${index}">Delete</button>
-                        <button class="person-update update${index}" data-id="${person.id}" data-index="${index}">Update</button>
-                        <button class="confirm con${index} css-none" data-id="${person.id}" data-index="${index}">Update</button>
-                        
-                    </div>    
-                </div>`
+        htmladded += `
+<div class="added-person added${index} added${person.id}">
+
+    <div class="sqr sqr${person.id}" data-index="${index}"></div>
+                    <div class=" added-person-data" data-index="${index}">
+
+
+        <div class=" data-disply data-disply${index}">
+            <p class="added-name">${person.name}</p>
+            <p class="added-weight">${person.weight}</p>
+
+        </div>
+        <div class="data-edit data-edit${index} css-none">
+            <input type="text" name="name" class="edit edit-name${index}">
+
+            <input type="number" name="weight" class="edit edit-weight${index}">
+
+        </div>
+    </div>
+    <div class="added-person-button">
+        <button class="person-delete" data-id="${person.id}" data-index="${index}">Delete</button>
+        <button class="person-update update${index}" data-id="${person.id}" data-index="${index}">Update</button>
+        <button class="confirm con${index} css-none" data-id="${person.id}" data-index="${index}">Update</button>
+
+    </div>
+</div>
+        
+        
+        `
     })
     document.querySelector('.added').innerHTML = htmladded;
+    unselit();
+    upit();
+    del_it();
+    updateselected();
+}
+function unselit() {
+    document.querySelectorAll(".sqr").forEach((persondiv) => {
+        let index = persondiv.dataset.index;
+        persondiv.addEventListener("click",()=>{
+            tounselect(index);
+        })
+
+
+    })
+}
+function upit() {
+    document.querySelectorAll('.person-update').forEach((upbutt) => {
+        upbutt.addEventListener("click", () => {
+            let index = upbutt.dataset.index;
+            index = Number(index);
+            toupdate(index,upbutt);
+
+        })
+    });
+}
+function del_it() {
     document.querySelectorAll('.person-delete').forEach((delbutt) => {
 
         delbutt.addEventListener("click", () => {
@@ -66,19 +100,9 @@ export function renderadded() {
             renderadded();
         })
     });
-    document.querySelectorAll('.person-update').forEach((upbutt) => {
-        upbutt.addEventListener("click", () => {
-            toupdate(upbutt);
-
-        })
-    });
-
-    updateselected();
-    tounselect();
 }
-function toupdate(upbutt) {
-    let index = upbutt.dataset.index;
-    index = Number(index);
+function toupdate(index,upbutt) {
+
     document.querySelector(`.data-edit${index}`).classList.remove("css-none");
     document.querySelector(`.data-disply${index}`).classList.add("css-none");
     upbutt.classList.add("css-none");

@@ -82,8 +82,7 @@ body {
 }
 
 .data-disply,
-.data-edit,
-.added-person-data {
+.data-edit {
     display: flex;
     justify-content: space-between;
 }
@@ -110,7 +109,18 @@ body {
 .added-person-button {
     max-width: 40%;
 }
-
+.sqr{
+    border-radius: 50%;
+    width: 50px;
+    background-color: white;
+    
+}
 .selected {
-    background-color: rgb(11, 11, 53);
+    background-color: rgb(21, 59, 32);
+}
+
+
+
+.bg_tounderstand{
+    background-color: red;
 }

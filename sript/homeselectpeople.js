@@ -6,7 +6,7 @@ export function updateselected() {
     persons.forEach((person) => {
         selected.forEach((select, index) => {
             if (person.id === select.id) {
-                document.querySelector(`.added${select.id}`).classList.toggle("selected");
+                document.querySelector(`.sqr${select.id}`).classList.toggle("selected");
             }
         })
     });
@@ -16,18 +16,13 @@ export function updateselected() {
 }
 
 
-export function tounselect() {
-    document.querySelectorAll(".added-person .added-person-data").forEach((persondiv) => {
-        let index = persondiv.dataset.index;
-        let contariner = ''
-
-        persondiv.addEventListener("click", () => {
-            persons.forEach((Element) => {
-                if (Element.id === persons[index].id)
-                    contariner = Element.id
-            })
-            removefromselected(contariner);
-            renderadded();
+export function tounselect(index) {
+        console.log('clicked sqr')
+        let temp
+        persons.forEach((Element) => {
+            if (Element.id === persons[index].id)
+                temp = Element.id
         })
-    })
+        removefromselected(temp);
+        renderadded();
 }
